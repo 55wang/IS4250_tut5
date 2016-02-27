@@ -20,9 +20,7 @@ It has a strong negative correlation between life expectancy and birth rate. The
 ```{r, message=FALSE, echo=FALSE}
 predict(model, data.frame(birthrat=25))
 
-ggplot(cty122, aes(x=birthrat, y=lifeexpf)) + 
-  geom_point()+
-  geom_smooth(method=lm, se=FALSE)
+ggplot(cty122, aes(x=birthrat, y=lifeexpf)) + geom_point(na.rm=TRUE)+ geom_smooth(method=lm, se=FALSE)
 ```
 The assumption is that there is correlation between lifeexpf and birthrat.
 But this does not imply there is casuation.
